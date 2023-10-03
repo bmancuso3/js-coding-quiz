@@ -1,5 +1,10 @@
+:root {
+    --tan: rgb(204, 196, 177);
+    --darkblue: rgb(3, 3, 60);
+}
+
 body {
-    background-image: linear-gradient(rgb(7, 7, 90), rgb(196, 195, 180));
+    background-image: linear-gradient(var(--darkblue), var(--tan));
     font-family:'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -12,10 +17,11 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .title {
-    color: white;
+    color: var(--tan);
     font-size: 300%;
     text-align: center;
     padding: 20px;
@@ -24,8 +30,8 @@ header {
 button {
     background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
     border-radius: 15px;
-    cursor:pointer;
-    font-size: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
     line-height: 16px;
     max-width: 255px;
     padding: 20px 52px;
@@ -38,5 +44,46 @@ button {
 }
 
 .start-button {
-    
+    font-weight: bold;
+    letter-spacing: .3rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    width: 95%;
+}
+
+.card-container {
+    background: var(--tan);
+    border: solid 2px black;
+    box-shadow: var(--tan) 0 2px 3px 2px, black 0 4px 7px 5px;
+    border-radius: 8px;
+    padding: 20px;
+    width: 20%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.timer-text {
+    font-size: 125%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.timer-count {
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hs-button {
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+.reset-button {
+    font-size: 1.2rem;
+    padding: 15px;
 }

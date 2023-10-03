@@ -25,11 +25,7 @@ function startTimer () {
     timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
-        if (timerCount >= 0) {
-            if (wrong) && timerCount > 15) {
-                timerCount = timerCount-15;
-            }
-        }
+
     })
 }
 
