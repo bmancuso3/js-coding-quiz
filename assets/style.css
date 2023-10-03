@@ -1,0 +1,42 @@
+body {
+    background-image: linear-gradient(rgb(7, 7, 97), rgb(196, 195, 180));
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 300%;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    border-radius: 15px;
+    cursor:pointer;
+    font-size: 30px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.start-button {
+    
+}
