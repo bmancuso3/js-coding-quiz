@@ -52,7 +52,6 @@ section {
     display: flex;
     flex-direction: column;
     align-items:end;
-    width: 95%;
 }
 
 .card-container {
@@ -61,6 +60,7 @@ section {
     box-shadow: var(--tan) 0 2px 3px 2px, black 0 4px 7px 5px;
     border-radius: 8px;
     padding: 20px;
+    margin-right: 5%;
     width: 20%;
     min-width: 250px;
     text-align: center;
