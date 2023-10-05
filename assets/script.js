@@ -1,19 +1,20 @@
 
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
+var saveButton = document.querySelector("#save-score");
+var timer;
+var timerCount = 10;
+var initials = document.querySelector("#input-initials");
 
 var questionSection = document.querySelector("#question-section");
-var scoreSection = document.querySelector("#score-section");
 var question = document.querySelector("#question");
 var choice1 = document.querySelector("#choice1");
 var choice2 = document.querySelector("#choice2");
 var choice3 = document.querySelector("#choice3");
 var choice4 = document.querySelector("#choice4");
+var correctness = document.querySelector(".correctness");
 
-var timer;
-var timerCount = 8;
-var initials = document.querySelector("#input-initials");
-var saveButton = document.querySelector("#save-score");
+var scoreSection = document.querySelector("#score-input");
 var score = timerCount;
 
 var questionArray = [ 
@@ -45,10 +46,11 @@ function renderNextQuestion(event) {
     console.log(event.target.textContent);
     console.log(questionArray[questionCounter].answer)
     if (event.target.textContent == questionArray[questionCounter].answer) {
-        alert("Correct!")
+        correctness.textContent = ("Correct!");
     }
         else {
-            alert("Incorrect.");
+            correctness.textContent = ("Ehh! Wrong!");
+
             //add incorrect answer logic with timer
         }
 
@@ -57,6 +59,8 @@ function renderNextQuestion(event) {
         alert("Quiz End");
         questionSection.classList.add("hidden");
         scoreSection.classList.remove("hidden");
+
+        clearInterval(timer);
 
         // add score input, storage, and high scores page
     }
@@ -77,6 +81,7 @@ choice4.addEventListener("click", renderNextQuestion);
 
 // Function to start the timer, subtracts 15 seconds for each incorrect answer
 function startTimer () {
+    timerCount = 10;
     if (timerCount <= 0) {
         return;
     }
@@ -98,8 +103,8 @@ choice4.textContent = questionArray[0].choices[3];
 }
 
 // START BUTTON
-// startButton.addEventListener("click", startQuiz);
 startButton.addEventListener("click", startTimer);
+// startButton.addEventListener("click", renderNextQuestion);
 
 // SAVE BUTTON
 var highscores = JSON.parse(localStorage.getItem("Highscores")) || []
@@ -111,6 +116,9 @@ saveButton.addEventListener("click", function(){
     }
     highscores.push(data);
     localStorage.setItem("Highscores", JSON.stringify(highscores));
+    scoreSection.classList.add("hidden");
+    startButton.classList.remove("hidden");
+
 })
 
 
