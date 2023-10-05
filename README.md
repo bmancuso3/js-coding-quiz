@@ -27,7 +27,7 @@ THEN I can save my initials and my score
 ## References
 1. <a href="https://www.w3schools.com/howto/howto_css_cards.asp"> W3Schools - How to Create a Card</a>
 2. <a href="https://www.formula1.com"> Ferrari Images</a>
-3. Corrado Alfano - Bootcampspot Tutor, calfano@bootcampspot.com
+3. Armando Osorio - Bootcampspot Tutor, aosorio@bootcampspot.com
 
 
 

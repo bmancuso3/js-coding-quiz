@@ -11,7 +11,7 @@ var choice3 = document.querySelector("#choice3");
 var choice4 = document.querySelector("#choice4");
 
 var timer;
-var timerCount = 5;
+var timerCount = 8;
 var initials = document.querySelector("#input-initials");
 var saveButton = document.querySelector("#save-score");
 var score = timerCount;
@@ -88,6 +88,7 @@ function startTimer () {
             clearInterval(timer);
         }
     }, 1000)
+startButton.classList.add("hidden");
 questionSection.classList.remove("hidden");
 question.textContent = questionArray[0].question;
 choice1.textContent = questionArray[0].choices[0];
@@ -121,6 +122,8 @@ function resetScores() {
 }
 // Attaches event listener to Reset button, clears local storage of scoreboard
 resetButton.addEventListener("click", resetScores);
+
+
 
 // save user initials & score as an object, 
 // save object within an array, 
