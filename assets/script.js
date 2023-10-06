@@ -116,24 +116,34 @@ choice4.textContent = questionArray[0].choices[3];
 
 // START BUTTON
 startButton.addEventListener("click", startTimer);
-// startButton.addEventListener("click", renderNextQuestion);
+
+
+var storedHighscores = JSON.parse(localStorage.getItem("Highscores")) || []
+var highscores = [];
+
+function init() {
+if (storedHighscores !== null) {
+    highscores = storedHighscores;
+}
+
+renderHighscores();
+}
 
 // SAVE BUTTON
-var highscores = JSON.parse(localStorage.getItem("Highscores")) || []
 saveButton.addEventListener("click", function(){
     var data = {
         initials: initials.value,
         score: timerCount,
     }
-    highscores.push(data);
-    localStorage.setItem("Highscores", JSON.stringify(highscores));
+    storedHighscores.push(data);
+    localStorage.setItem("Highscores", JSON.stringify(storedHighscores));
     scoreSection.classList.add("hidden");
     startButton.classList.remove("hidden");
     highscoresPage.classList.remove("hidden");
 })
 
 // HIGH SCORES BUTTON
-// stops the timer, hides all cards except HS page
+// stops the timer, hides all cards except HS page, shows Start button
 var highscoresPage = document.querySelector(".highscores-page");
 function showHS() {
     clearInterval(timer);
@@ -141,9 +151,8 @@ function showHS() {
     scoreSection.classList.add("hidden");
     questionSection.classList.add("hidden");
     startButton.classList.remove("hidden");
-
 }
-// Added event listener to HS button
+// Attaches event listener to HS button
 highScoreBtn.addEventListener("click", showHS);
 
 // RESET BUTTON
@@ -155,8 +164,5 @@ function resetScores() {
 // Attaches event listener to Reset button
 resetButton.addEventListener("click", resetScores);
 
-
-
-// save user initials & score as an object, 
-// save object within an array, 
-// save that to local storage
+// Retrieves stored HS and renders it to page on load
+init()

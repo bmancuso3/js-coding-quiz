@@ -25,8 +25,8 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 ## References
-1. <a href="https://www.w3schools.com/howto/howto_css_cards.asp"> W3Schools - How to Create a Card</a>
-2. <a href="https://www.formula1.com"> Ferrari Images</a>
+1. <a href="site"> name</a>
+2. <a href="site"> name</a>
 3. Armando Osorio - Bootcampspot Tutor, aosorio@bootcampspot.com
 
 
@@ -35,14 +35,4 @@ THEN I can save my initials and my score
 
 ## <a href="https://bmancuso3.github.io/js-coding-quiz">Live Site</a>
 
-## Desired Format
-### Large Device
-<img src="./assets/Images/Large Device.png" alt="portfolio page example">
-
-### Medium Device
-
-<img src="./assets/Images/Medium Device.png" alt="portfolio page example">
-
-### Small Device
-
-<img src="./assets/Images/Small Device.png" alt="portfolio page example">
+## Site Preview
