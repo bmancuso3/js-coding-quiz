@@ -1,4 +1,3 @@
-
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 var saveButton = document.querySelector("#save-score");

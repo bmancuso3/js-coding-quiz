@@ -26,8 +26,13 @@ THEN I can save my initials and my score
 ```
 ## References
 1. <a href="site"> name</a>
-2. <a href="site"> name</a>
+2. Consulted course work from repo UTA-VIRT-FSF-FT-09-2023-U-LOLC, Module 4
 3. Armando Osorio - Bootcampspot Tutor, aosorio@bootcampspot.com
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
 
 
 
