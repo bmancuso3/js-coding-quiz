@@ -154,6 +154,10 @@ button {
     font-size: 1.5rem;
 }
 
+.HS-li {
+    color: black;
+}
+
 
 /* hidden must remain last property */
 .hidden {

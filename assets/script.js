@@ -118,15 +118,31 @@ choice4.textContent = questionArray[0].choices[3];
 startButton.addEventListener("click", startTimer);
 
 
-var storedHighscores = JSON.parse(localStorage.getItem("Highscores")) || []
+var storedHighscores = JSON.parse(localStorage.getItem("Highscores"));
+//  || []
 var highscores = [];
 
 function init() {
-if (storedHighscores !== null) {
-    highscores = storedHighscores;
+    if (storedHighscores !== null) {
+        highscores = storedHighscores;
+    }
+
+    renderHighscores();
 }
 
-renderHighscores();
+var hsList = document.querySelector("#high-score-info")
+
+function renderHighscores() {
+    hsList.innerHTML = "";
+
+    for (var i = 0; i < hsList.length; i++) {
+        var hs = highscores[i];
+
+        var li = document.createElement("li");
+        li.textContent = hs;
+
+        hsList.appendChild(li);
+    }
 }
 
 // SAVE BUTTON
@@ -166,3 +182,4 @@ resetButton.addEventListener("click", resetScores);
 
 // Retrieves stored HS and renders it to page on load
 init()
+console.log(storedHighscores)
