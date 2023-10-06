@@ -48,11 +48,6 @@ var questionArray = [
 
 var questionCounter = 0;
 
-// Runs when the page loads to pull scoreboard from local storage
-function init() {
-    getScoreboard();
-}
-
 function renderNextQuestion(event) {
     console.log(event.target.textContent);
     console.log(questionArray[questionCounter].answer)
@@ -93,7 +88,7 @@ choice3.addEventListener("click", renderNextQuestion);
 choice4.addEventListener("click", renderNextQuestion);
 
 
-// Function to start the timer, subtracts 15 seconds for each incorrect answer
+// Function to start the timer & quiz, subtracts 15 seconds for each incorrect answer
 function startTimer () {
     timerCount = 60;
     if (timerCount <= 0) {
@@ -128,7 +123,7 @@ var highscores = JSON.parse(localStorage.getItem("Highscores")) || []
 saveButton.addEventListener("click", function(){
     var data = {
         initials: initials.value,
-        score: score
+        score: timerCount,
     }
     highscores.push(data);
     localStorage.setItem("Highscores", JSON.stringify(highscores));
