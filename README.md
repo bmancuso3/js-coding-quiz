@@ -25,7 +25,7 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 ## References
-1. <a href="site"> name</a>
+1. Kaia Scheirman - Bootcampspot Tutor, kscheirman@bootcampspot.com
 2. Consulted course work from repo UTA-VIRT-FSF-FT-09-2023-U-LOLC, Module 4
 3. Armando Osorio - Bootcampspot Tutor, aosorio@bootcampspot.com
 
@@ -34,10 +34,16 @@ THEN I can save my initials and my score
 - CSS
 - JavaScript
 
-
-
 ## <a href="https://github.com/bmancuso3/js-coding-quiz">GitHub Repository</a>
 
 ## <a href="https://bmancuso3.github.io/js-coding-quiz">Live Site</a>
 
-## Site Preview
+## Site Previews
+## Start Page
+<img src='./assets/images/Screenshot 2023-10-10 at 3.41.54 PM.png'>
+
+## Quiz Questions
+<img src='./assets/images/Screenshot 2023-10-10 at 3.43.21 PM.png'>
+
+## High Scores Page
+<img src='./assets/images/Screenshot 2023-10-10 at 3.43.06 PM.png'>
