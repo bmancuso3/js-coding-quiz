@@ -70,7 +70,6 @@ function renderNextQuestion(event) {
 
         clearInterval(timer);
 
-        // add score input, storage, and high scores page
     }
         else {
     question.textContent = questionArray[questionCounter].question;
@@ -125,22 +124,19 @@ function init() {
     if (storedHighscores !== null) {
         highscores = storedHighscores;
     }
-
     renderHighscores();
 }
 
 var hsList = document.querySelector("#high-score-info")
 
 function renderHighscores() {
-    hsList.innerHTML = "";
 
-    for (var i = 0; i < hsList.length; i++) {
-        var hs = highscores[i];
+    for (var i = 0; i < highscores.length; i++) {
 
-        var li = document.createElement("li");
-        li.textContent = hs;
+        var scoreItem = document.createElement("li");
+        scoreItem.textContent = highscores[i].initials + '-' + highscores[i].score;
 
-        hsList.appendChild(li);
+        hsList.appendChild(scoreItem);
     }
 }
 
@@ -150,11 +146,13 @@ saveButton.addEventListener("click", function(){
         initials: initials.value,
         score: timerCount,
     }
-    storedHighscores.push(data);
-    localStorage.setItem("Highscores", JSON.stringify(storedHighscores));
+    highscores.push(data);
+    localStorage.setItem("Highscores", JSON.stringify(highscores));
     scoreSection.classList.add("hidden");
     startButton.classList.remove("hidden");
     highscoresPage.classList.remove("hidden");
+    window.location.reload();
+    showHS();
 })
 
 // HIGH SCORES BUTTON
@@ -175,10 +173,11 @@ highScoreBtn.addEventListener("click", showHS);
 var resetButton = document.querySelector(".reset-button");
 function resetScores() {
   localStorage.clear();
+  window.location.reload();
 }
 // Attaches event listener to Reset button
 resetButton.addEventListener("click", resetScores);
 
 // Retrieves stored HS and renders it to page on load
-init()
-console.log(storedHighscores)
+init();
+// console.log(storedHighscores)
